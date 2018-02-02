@@ -6,7 +6,9 @@ public class SoundVisual : MonoBehaviour {
 
     private const int SAMPLE_SIZE = 1024;
 
-   // public AudioManager audioManager;
+    [Header("Links for SoundVisual in AudioManager")]
+    [SerializeField]
+    private AudioSource source;
 
     public float rmsValue;
     public float dbValue;
@@ -22,7 +24,6 @@ public class SoundVisual : MonoBehaviour {
     public Color minColor;
     public Color maxColor;
 
-    private AudioSource source;
     private float[] samples;
     private float[] spectrum;
     private float sampleRate;
@@ -33,7 +34,7 @@ public class SoundVisual : MonoBehaviour {
 	
     // Use this for initialization
 	void Start () {
-        source = GetComponent<AudioSource>();
+        //source = GetComponent<AudioSource>();
         samples = new float[SAMPLE_SIZE];
         spectrum = new float[SAMPLE_SIZE];
         sampleRate = AudioSettings.outputSampleRate;
